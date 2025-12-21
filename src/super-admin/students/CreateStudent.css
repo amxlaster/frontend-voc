@@ -1,0 +1,152 @@
+:root {
+  --accent: #0b2e5a;
+  --accent-2: #092144;
+  --muted: rgba(8,34,60,0.6);
+}
+
+/* ROOT */
+.sa-create-student-root {
+  width:100%;
+  padding:18px 22px;
+  box-sizing:border-box;
+}
+
+.sa-create-student-centered {
+  display:flex;
+  justify-content:center;
+}
+
+/* CARD */
+.sa-create-student-card {
+  width:100%;
+  max-width:760px;
+  background:transparent;
+  padding:8px;
+  box-sizing:border-box;
+}
+
+.sa-create-student-compact {
+  max-width:640px;
+}
+
+/* HEADER */
+.sa-create-student-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:14px;
+}
+
+.sa-create-student-head h2 {
+  margin:0 0 6px 0;
+  font-size:24px;
+  color:var(--accent);
+}
+
+.sa-create-student-muted {
+  margin:0;
+  color:var(--muted);
+}
+
+/* BODY */
+.sa-create-student-body {
+  background: rgba(255,255,255,0.96);
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 12px 30px rgba(9,34,64,0.06);
+}
+
+/* FORM GRID */
+.sa-create-student-form-grid {
+  display:grid;
+  gap:12px;
+}
+
+.sa-create-student-form-1 {
+  grid-template-columns:1fr;
+}
+
+/* FORM GROUP */
+.sa-create-student-form-group {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+/* LABEL */
+.sa-create-student-label {
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* INPUT */
+.sa-create-student-input {
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.08);
+  font-size:14px;
+  outline:none;
+  background:white;
+  transition:box-shadow .12s ease, border-color .12s ease, transform .06s ease;
+}
+
+.sa-create-student-input:focus {
+  box-shadow:0 8px 20px rgba(11,34,76,0.06);
+  border-color: rgba(11,62,132,0.12);
+  transform: translateY(-1px);
+}
+
+/* ACTION BUTTONS */
+.sa-create-student-actions {
+  display:flex;
+  gap:12px;
+  margin-top:6px;
+}
+
+/* BUTTON BASE */
+.sa-create-student-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  border:0;
+  text-decoration:none;
+}
+
+.sa-create-student-large {
+  padding:12px 18px;
+  font-size:15px;
+}
+
+/* PRIMARY BUTTON */
+.sa-create-student-primary {
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:#fff;
+  box-shadow:0 10px 24px rgba(11,34,76,0.12);
+}
+
+/* OUTLINE BUTTON */
+.sa-create-student-outline {
+  background:white;
+  color:var(--accent);
+  border:1px solid rgba(10,30,60,0.08);
+  box-shadow:0 6px 18px rgba(9,34,64,0.04);
+}
+
+/* RESPONSIVE */
+@media (max-width:880px) {
+  .sa-create-student-card {
+    max-width:100%;
+    padding:6px;
+  }
+  .sa-create-student-body {
+    padding:14px;
+  }
+  .sa-create-student-actions {
+    flex-direction:column-reverse;
+    align-items:stretch;
+  }
+}

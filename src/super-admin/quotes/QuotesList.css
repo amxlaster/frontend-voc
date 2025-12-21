@@ -1,0 +1,99 @@
+.quotes-root {
+  padding: 20px;
+}
+
+.quotes-top {
+  margin-bottom: 20px;
+}
+
+.quotes-search {
+  width: 250px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+/* TABLE */
+.quotes-table-wrap {
+  overflow-x: auto;
+}
+
+.quotes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.quotes-table th,
+.quotes-table td {
+  border-bottom: 1px solid #eef2f7;
+  padding: 12px;
+  text-align: left;
+}
+
+.quotes-table th {
+  background: #f5f9ff;
+  font-weight: 700;
+  color: #0b2e5a;
+}
+
+.quotes-empty {
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+/* =========================
+   BUTTONS & LINKS (UPDATED)
+========================= */
+
+/* Primary button (Create Quote etc.) */
+.quotes-btn.primary {
+  padding: 8px 16px;
+  background: linear-gradient(180deg, #0b2e5a, #092144);
+  color: white ;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .2s, transform .15s;
+}
+
+.quotes-btn.primary:hover {
+  background: #092144;
+}
+
+.quotes-btn.primary:active {
+  transform: scale(0.97);
+}
+
+/* Action links */
+.quotes-link {
+  margin-right: 12px;
+  color: #3877d6 !important; 
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/* Danger action */
+.quotes-link.danger {
+  color:#f5f9ff !important;
+  text-decoration:none !important;
+  background-color: #092144 !important;
+}
+
+
+/* Pagination */
+.quotes-pager {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  
+}
+
+.quotes-pager button{
+  color:#092144 !important;
+  background-color: #d1d5db!important;
+}

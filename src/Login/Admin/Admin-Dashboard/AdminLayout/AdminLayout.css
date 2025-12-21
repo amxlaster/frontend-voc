@@ -1,0 +1,38 @@
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  background: #f8faff;
+}
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.admin-content {
+  padding: 15px;
+}
+
+/* MOBILE OVERLAY */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 200;
+  display: none;
+}
+
+.sidebar-open .sidebar-overlay {
+  display: block;
+}
+
+@media (min-width: 901px) {
+  .sidebar-overlay {
+    display: none !important;
+  }
+}

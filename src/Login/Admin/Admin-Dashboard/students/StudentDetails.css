@@ -1,0 +1,309 @@
+/* ------------------------- */
+/* ROOT WRAPPER */
+/* ------------------------- */
+.sd-root {
+  padding: 22px;
+  background: #f6f9fc;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system;
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------- */
+/* MAIN CARD */
+/* ------------------------- */
+.sd-card {
+  width: 100%;
+  max-width: 1100px;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(9,34,64,0.06);
+  padding: 22px;
+  color: rgba(8,34,60,0.85);
+}
+
+.sd-card-wide {
+  padding: 24px;
+}
+
+/* ------------------------- */
+/* TOP SECTION */
+/* ------------------------- */
+.sd-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;     /* responsive fix */
+  gap: 12px;
+  border-bottom: 1px solid rgba(10,30,60,0.05);
+  padding-bottom: 14px;
+}
+
+.sd-title {
+  margin: 0;
+  font-size: 22px;
+  color: #0b2e5a;
+  font-weight: 800;
+  word-break: break-word;
+}
+
+.sd-sub {
+  margin-top: 6px;
+  color: rgba(8,34,60,0.6);
+  font-size: 14px;
+}
+
+/* ------------------------- */
+/* BUTTON ROW */
+/* ------------------------- */
+.sd-actions-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Base Button */
+.sd-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+/* Outline Button */
+.sd-outline {
+  background: #fff;
+  color: #0b2e5a;
+  border: 1px solid rgba(10,30,60,0.1);
+}
+
+/* Delete Button */
+.sd-destruct {
+  background: transparent;
+  color: #b91c1c;
+}
+
+/* ------------------------- */
+/* CONTENT AREA */
+/* ------------------------- */
+.sd-body {
+  padding-top: 20px;
+}
+
+/* GRID - DESKTOP 2 COLUMN */
+.sd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+}
+
+/* FIELD CARD */
+.sd-field {
+  background: rgba(11,34,76,0.03);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.sd-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(8,34,60,0.55);
+}
+
+.sd-value {
+  font-size: 15px;
+  margin-top: 6px;
+  color: rgba(8,34,60,0.9);
+}
+
+.sd-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;   /* responsive fix */
+}
+
+.sd-copy {
+  background: transparent;
+  border: 1px solid rgba(10,30,60,0.1);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* COPY TOAST */
+.sd-copy-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 26px;
+  background: #0b2e5a;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(9,34,64,0.25);
+  z-index: 9999;
+}
+
+/* ERROR CARD */
+.sd-error {
+  border-left: 4px solid #b91c1c;
+}
+/* ------------------------- */
+/* TABLET FIX (below 900px) */
+/* ------------------------- */
+@media (max-width: 900px) {
+
+  .sd-root {
+    padding: 16px;
+  }
+
+  .sd-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .sd-grid {
+    grid-template-columns: 1fr;  /* 1 column layout */
+    gap: 14px;                   /* tighter spacing */
+  }
+
+  .sd-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;                    /* reduced spacing */
+  }
+
+  .sd-title {
+    font-size: 20px;
+  }
+
+  .sd-actions-row {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .sd-btn {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .sd-field {
+    padding: 12px 14px;
+  }
+
+  .sd-value {
+    font-size: 14px;
+  }
+}
+
+
+/* ------------------------- */
+/* MOBILE FIX (below 600px) */
+/* ------------------------- */
+@media (max-width: 600px) {
+
+  .sd-root {
+    padding: 12px;
+  }
+
+  .sd-card {
+    padding: 14px;
+  }
+
+  .sd-title {
+    font-size: 18px;
+  }
+
+  .sd-sub {
+    font-size: 12px;
+  }
+
+  .sd-field {
+    padding: 10px 12px;
+    border-radius: 8px;     /* softer card */
+  }
+
+  .sd-label {
+    font-size: 12px;
+  }
+
+  .sd-value {
+    font-size: 13px;
+  }
+
+  .sd-copy {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  /* Reduce vertical white space */
+  .sd-body {
+    padding-top: 14px;
+  }
+
+  .sd-grid {
+    gap: 10px;
+  }
+}
+
+
+/* ----------------------------- */
+/* VERY SMALL DEVICES (below 400px) */
+/* ----------------------------- */
+@media (max-width: 400px) {
+
+  .sd-title {
+    font-size: 17px;
+  }
+
+  .sd-card {
+    padding: 12px;
+  }
+
+  .sd-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sd-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .sd-field {
+    padding: 10px;
+  }
+
+  .sd-value {
+    font-size: 13px;
+  }
+}
+/* ----------------------------------------- */
+/* SHOW ONLY TABLE ON LAPTOP / DESKTOP */
+/* HIDE MOBILE CARDS */
+/* ----------------------------------------- */
+.studentlist-list-mobile {
+  display: none; /* hidden by default on big screens */
+}
+
+/* ----------------------------------------- */
+/* SHOW MOBILE CARDS ONLY ON MOBILE */
+/* HIDE TABLE ON MOBILE */
+/* ----------------------------------------- */
+@media (max-width: 768px) {
+  .studentlist-list-mobile {
+    display: block;
+  }
+
+  .studentlist-table {
+    display: none;
+  }
+}

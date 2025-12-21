@@ -1,0 +1,85 @@
+/* =============================== */
+/*      STUDENT TOPBAR (FINAL)     */
+/* =============================== */
+
+.student-topbar {
+  height: 75px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px; /* FIX: adds top & bottom spacing */
+  border-bottom: 1px solid #e5e7eb;
+  box-sizing: border-box;
+}
+
+/* LEFT (Hamburger + Logo for mobile) */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Hamburger only visible in mobile */
+.hamburger {
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+  /* user-select: none; */
+}
+
+/* Logo visible only in mobile */
+.topbar-logo {
+  display: none;
+  width: 120px;
+}
+
+/* RIGHT SECTION (Notif + Profile) */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* FIX: More spacing between notif + profile */
+}
+
+
+/* PROFILE IMAGE */
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-img {
+  width: 52px;    /* FIX: Bigger profile image */
+  height: 52px;   /* FIX: Bigger profile image */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 12px 18px;
+  border-radius: 8px;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 200;
+}
+
+/* =============================== */
+/*        MOBILE RESPONSIVE        */
+/* =============================== */
+
+@media (max-width: 900px) {
+
+  /* SHOW hamburger + logo */
+  .hamburger {
+    display: block;
+  }
+
+  .topbar-logo {
+    display: block;
+  }
+}

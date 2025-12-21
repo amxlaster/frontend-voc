@@ -1,0 +1,115 @@
+/* MAIN WRAPPER */
+.wotd-wrapper {
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* TITLE */
+.wotd-title {
+  font-size: 2rem;
+  background: #f6f6f6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  animation: slideDown 0.8s ease;
+}
+
+/* CARD CONTAINER */
+.wotd-card {
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* Animation */
+  animation: floatUp 0.8s ease forwards;
+
+  /* Hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.wotd-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* WORD */
+.wotd-word {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: popIn 0.7s ease;
+}
+
+/* MEANING */
+.wotd-meaning {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.5;
+  animation: fadeIn 1.2s ease;
+}
+
+/* LOADING TEXT */
+.loading {
+  margin-top: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0.7;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+/* ------------------------- */
+/* 🔥 ANIMATIONS */
+/* ------------------------- */
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* ------------------------- */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------- */
+
+@media (max-width: 480px) {
+  .wotd-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .wotd-title {
+    font-size: 1.2rem;
+  }
+
+  .wotd-word {
+    font-size: 18px;
+  }
+
+  .wotd-meaning {
+    font-size: 13px;
+  }
+}

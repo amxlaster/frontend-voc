@@ -1,0 +1,244 @@
+/* ----------------------------------------- */
+/* ROOT WRAPPER */
+/* ----------------------------------------- */
+.studentlist-root {
+  background: #f6f9fc;
+  min-height: 100vh;
+  font-family: Inter, system-ui;
+}
+
+/* ----------------------------------------- */
+/* CARD */
+/* ----------------------------------------- */
+.studentlist-card {
+  width:100%;
+  max-width: 1100px;
+  /* margin: 0 auto; */
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(9, 34, 64, 0.06);
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* ----------------------------------------- */
+/* HEADER */
+/* ----------------------------------------- */
+.studentlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(10, 30, 60, 0.06);
+}
+
+.studentlist-header h3 {
+  margin: 0;
+  color: #0b2e5a;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* ----------------------------------------- */
+/* TABLE WRAPPER */
+/* ----------------------------------------- */
+.studentlist-wrap {
+  margin-top: 14px;
+  overflow-x: auto;
+}
+
+/* Scrollbar styling */
+.studentlist-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.studentlist-wrap::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.studentlist-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ----------------------------------------- */
+/* TABLE */
+/* ----------------------------------------- */
+.studentlist-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.studentlist-table thead {
+  background: linear-gradient(180deg, #f8fbff, #eef4fa);
+}
+
+.studentlist-table th {
+  padding: 14px 18px;
+  font-size: 14px;
+  color: #0b2e5a;
+  border-bottom: 1px solid rgba(10, 30, 60, 0.08);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.studentlist-table td {
+  padding: 18px;
+  border-bottom: 1px solid rgba(10, 30, 60, 0.05);
+  color: rgba(8, 34, 60, 0.75);
+  font-size: 14px;
+}
+
+/* Hover Row */
+.studentlist-table tbody tr:hover {
+  background: rgba(11, 34, 76, 0.03);
+}
+
+/* monospace email/phone */
+.mono {
+  font-family: ui-monospace, Menlo, Monaco, 'Roboto Mono';
+  color: rgba(8, 34, 60, 0.65);
+}
+
+/* student name link */
+.student-name-link {
+  color: #0b2e5a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.student-name-link:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------- */
+/* FOOTER + PAGINATION */
+/* ----------------------------------------- */
+.studentlist-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(10, 30, 60, 0.06);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.studentlist-meta {
+  font-size: 14px;
+  color: rgba(8, 34, 60, 0.6);
+}
+
+.studentlist-pager {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pager-btn {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(10, 30, 60, 0.1);
+  font-weight: 700;
+  cursor: pointer;
+  color: #0b2e5a;
+}
+
+.pager-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pager-info {
+  font-weight: 700;
+  color: #0b2e5a;
+}
+
+/* ----------------------------------------- */
+/* LOADING + ERROR */
+/* ----------------------------------------- */
+.studentlist-loading,
+.studentlist-error {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+/* ----------------------------------------- */
+/* RESPONSIVE BREAKPOINTS */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* MOBILE CARD VIEW (REMOVE TABLE) */
+/* ----------------------------------------- */
+@media (max-width: 600px) {
+
+  /* Hide table entirely */
+  .studentlist-wrap {
+    overflow: visible;
+  }
+
+  .studentlist-table {
+    display: none;
+  }
+
+  /* Create card list layout */
+  .studentlist-list-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .student-mobile-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border: 1px solid rgba(10,30,60,0.06);
+  }
+
+  .student-mobile-line {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #0b2e5a;
+    font-weight: 600;
+  }
+
+  .student-mobile-value {
+    font-weight: 500;
+    color: rgba(8,34,60,0.75);
+  }
+
+  /* Actions */
+  .student-mobile-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .student-mobile-btn {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .student-mobile-view {
+    background: #0b2e5a;
+    color: white;
+  }
+
+  .student-mobile-delete {
+    background: #b91c1c;
+    color: white;
+  }
+}

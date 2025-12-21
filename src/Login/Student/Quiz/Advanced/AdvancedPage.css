@@ -1,0 +1,195 @@
+/* ============================================================
+   ADVANCED QUIZ WRAPPER (Same as Beginner & Intermediate)
+============================================================ */
+.quiz-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: url("../../../../assets/quiz-bg.jpg") center/cover no-repeat;
+  padding-bottom: 140px;
+}
+
+.quiz-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.quiz-wrapper > * {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* ============================================================
+   MAIN CENTER CONTENT BOX (Reusable for All Levels)
+============================================================ */
+.quiz-center-box {
+  width: 680px;
+  max-width: 95%;
+  min-height: 480px;
+
+  margin: 40px auto;
+  background: rgba(194, 229, 255, 0.43);
+  border-radius: 12px;
+
+  padding: 40px 50px;
+
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+/* ============================================================
+   QUESTION TITLE
+============================================================ */
+.qs-title {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: left;
+  color: #000;
+}
+
+
+/* ============================================================
+   OPTIONS (Same Premium Style)
+============================================================ */
+.qs-opt {
+  width: 100%;
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  margin: 10px 0;
+  font-size: 18px;
+  color: black;
+  transition: 0.25s ease;
+}
+
+.qs-opt:hover {
+  background: #f2f2f2;
+}
+
+.red {
+  background: #ff6b6b !important;
+  color: white !important;
+}
+
+.green {
+  background: #4cd964 !important;
+  color: white !important;
+}
+
+
+/* ============================================================
+   CORRECT GIF OVERLAY (Full Screen)
+============================================================ */
+.correct-overlay,
+.gif-layer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999 !important;
+}
+
+.correct-overlay img,
+.gif-layer img {
+  width: 70%;
+  max-width: 600px;
+}
+
+
+/* ============================================================
+   INFO SCREEN IMAGE
+============================================================ */
+.correct-img-box {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.correct-img {
+  width: 80%;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+
+/* ============================================================
+   NEXT BUTTON
+============================================================ */
+.next-btn {
+  padding: 12px 24px;
+  background: #0099ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.next-btn:hover {
+  background: #007ad1;
+  transform: scale(1.05);
+}
+
+
+/* ============================================================
+   RESPONSIVE DESIGN
+============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .quiz-center-box {
+    padding: 30px;
+    min-height: 400px;
+  }
+
+  .qs-title {
+    font-size: 22px;
+  }
+
+  .qs-opt {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .quiz-center-box {
+    padding: 20px;
+  }
+
+  .qs-title {
+    font-size: 20px;
+  }
+
+  .qs-opt {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .correct-overlay img {
+    width: 90%;
+  }
+}

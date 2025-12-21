@@ -1,0 +1,147 @@
+:root{
+  --accent:#0b2e5a;
+  --accent-2:#092144;
+  --muted:rgba(8,34,60,0.6);
+}
+
+/* ROOT CONTAINER */
+.sa-create-admin-root{
+  width:100%;
+  padding:18px 22px;
+  box-sizing:border-box;
+}
+
+.sa-create-admin-centered{
+  display:flex;
+  justify-content:center;
+}
+
+.sa-create-admin-card{
+  width:100%;
+  max-width:980px;
+  background:transparent;
+  padding:8px;
+  box-sizing:border-box;
+}
+
+/* BODY */
+.sa-create-admin-body{
+  background:rgba(255,255,255,0.9);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 12px 30px rgba(9,34,64,0.06);
+}
+
+/* FORM GRID */
+.sa-create-admin-form-grid{
+  display:grid;
+  gap:16px;
+  align-items:start;
+}
+
+.sa-create-admin-form-2{
+  grid-template-columns:1fr 1fr;
+}
+
+.sa-create-admin-full{
+  grid-column:1 / -1;
+}
+
+/* LABEL + INPUT */
+.sa-create-admin-label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.sa-create-admin-input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(10,30,60,0.08);
+  background:#fff;
+  font-size:15px;
+  outline:none;
+  transition:box-shadow .12s ease, border-color .12s ease, transform .06s ease;
+}
+
+.sa-create-admin-input:focus{
+  border-color:rgba(11,62,132,0.18);
+  box-shadow:0 8px 20px rgba(11,34,76,0.06);
+  transform:translateY(-1px);
+}
+
+/* FORM ACTION BUTTONS */
+.sa-create-admin-actions{
+  grid-column:1 / -1;
+  display:flex;
+  gap:12px;
+  margin-top:6px;
+  align-items:center;
+}
+
+/* BUTTON BASE */
+.sa-create-admin-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  border:0;
+  text-decoration:none;
+}
+
+.sa-create-admin-large{
+  padding:12px 18px;
+  font-size:15px;
+}
+
+/* PRIMARY BUTTON */
+.sa-create-admin-primary{
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:#fff;
+  box-shadow:0 10px 24px rgba(11,34,76,0.12);
+}
+
+/* OUTLINE BUTTON */
+.sa-create-admin-outline{
+  background:white;
+  color:var(--accent);
+  border:1px solid rgba(10,30,60,0.08);
+  box-shadow:0 6px 18px rgba(9,34,64,0.04);
+}
+
+/* DISABLED BUTTON */
+.sa-create-admin-btn[disabled]{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+/* RESPONSIVE */
+@media(max-width:880px){
+  .sa-create-admin-form-2{
+    grid-template-columns:1fr;
+  }
+  .sa-create-admin-card{
+    padding:0 6px;
+  }
+  .sa-create-admin-body{
+    padding:14px;
+  }
+}
+
+@media(max-width:480px){
+  .sa-create-admin-body{
+    padding:12px;
+  }
+  .sa-create-admin-large{
+    width:100%;
+  }
+  .sa-create-admin-actions{
+    flex-direction:column-reverse;
+    align-items:stretch;
+  }
+}

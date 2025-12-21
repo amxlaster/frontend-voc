@@ -1,0 +1,83 @@
+.admin-charts-root {
+  padding: 20px;
+}
+
+/* HEADER */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* CONTROLS */
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chart-controls select,
+.chart-controls input,
+.chart-controls button {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* CHART AREA */
+.chart-body {
+  margin-top: 30px;
+  width: 100%;
+  height: 420px;
+  padding: 10px;
+}
+
+/* LOADING */
+.chart-loading {
+  padding: 60px;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+/* 🔥 HIDDEN EXPORT CHARTS */
+.chart-export-hidden {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.chart-export-hidden > div {
+  width: 900px;
+  height: 450px;
+}
+
+/* 📱 TABLET */
+@media (max-width: 768px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-controls {
+    width: 100%;
+  }
+
+  .chart-controls select,
+  .chart-controls input,
+  .chart-controls button {
+    width: 100%;
+  }
+
+  .chart-body {
+    height: 320px;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+  .chart-body {
+    height: 260px;
+  }
+}

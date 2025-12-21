@@ -1,0 +1,170 @@
+/* ============================================================
+   MAIN QUESTION CONTAINER
+============================================================ */
+.qs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 11;
+}
+
+/* ============================================================
+   CENTER GLASS BOX
+============================================================ */
+.quiz-center-box {
+  width: 680px;
+  max-width: 95%;
+  height: 480px;
+  margin-top: 50px !important;
+  background: rgba(194, 229, 255, 0.43);
+  border-radius: 8px;
+  padding: 40px 50px;
+  margin: 0 auto;
+
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* ============================================================
+   QUESTION TITLE
+============================================================ */
+.qs-title {
+  font-size: 26px;
+  margin-bottom: 25px;
+  text-align: left;
+  font-weight: 700;
+  width: 100%;
+}
+
+
+/* ============================================================
+   OPTIONS (.qs-opt)
+============================================================ */
+.qs-opt {
+  width: 100%;
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  margin: 10px 0;
+  font-size: 18px;
+  transition: 0.2s;
+  color: black;
+}
+
+.qs-opt:hover {
+  background: #f2f2f2;
+}
+
+.red {
+  background: #ff6b6b !important;
+  color: white;
+}
+
+.green {
+  background: #4cd964 !important;
+  color: white;
+}
+
+
+/* ============================================================
+   GIF FULLSCREEN OVERLAY
+============================================================ */
+.gif-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.gif-overlay img {
+  width: 70%;
+}
+
+
+/* Fade animation */
+.fade-in {
+  animation: fade 0.4s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ============================================================
+   🔥 RESPONSIVE BREAKPOINTS
+============================================================ */
+
+/* ---------- TABLET (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .quiz-center-box {
+    width: 90%;
+    height: auto;
+    padding: 35px 35px;
+  }
+  .qs-title {
+    font-size: 24px;
+  }
+  .qs-opt {
+    font-size: 17px;
+    padding: 14px;
+  }
+}
+
+
+/* ---------- TABLET PORTRAIT (≤768px) ---------- */
+@media (max-width: 768px) {
+  .quiz-center-box {
+    width: 95%;
+    height: auto;
+    padding: 25px 25px;
+    border-radius: 10px;
+  }
+  .qs-title {
+    font-size: 22px;
+    text-align: center;
+  }
+  .qs-opt {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 25px;
+  }
+  .gif-overlay img {
+    width: 80%;
+  }
+}
+
+
+/* ---------- MOBILE (≤480px) ---------- */
+@media (max-width: 480px) {
+  .quiz-center-box {
+    width: 96%;
+    height: auto;
+    padding: 20px 18px;
+  }
+  .qs-title {
+    font-size: 20px;
+    text-align: center;
+  }
+  .qs-opt {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .gif-overlay img {
+    width: 90%;
+  }
+}

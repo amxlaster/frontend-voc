@@ -1,0 +1,366 @@
+/* StudentLogin.css — styled similar to AdminLogin with tabs */
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: "Arima", sans-serif;
+  background: #f8f8f8;
+}
+
+/* layout */
+.sl-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* LEFT */
+.sl-left {
+  flex: 0 0 46%;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  color: #fff;
+  position: relative;
+  padding-top: 80px;
+}
+
+.sl-left-inner {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  z-index: 2;
+  transform: translateY(-20px);
+}
+
+.sl-logo {
+  height: 150px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
+}
+
+/* dark overlay */
+.sl-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.02));
+  pointer-events: none;
+}
+
+/* RIGHT */
+.sl-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 48px;
+  background: #ffffff;
+}
+
+.sl-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 28px 32px;
+  border-radius: 8px;
+  background: transparent !important;
+
+  /* fade + slide on load */
+  opacity: 0;
+  animation: sl-card-in 480ms ease-out forwards;
+}
+
+.sl-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  margin: 0 0 18px 0;
+  color: #0b1220;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ---------- Tabs (Sign Up / Login) ---------- */
+.sl-tabrow {
+  width: 330px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  background: #f3e1e1;
+  border-radius: 40px;
+  margin: 0 auto 26px auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.sl-tab {
+  flex: 1;
+  height: 100%;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  color: #3b3535;
+  transition: 0.2s ease;
+}
+
+.sl-tab.active {
+  background: #f7b1ad;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(247, 177, 173, 0.5);
+}
+
+/* ---------- Form ---------- */
+.sl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.sl-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.sl-label {
+  font-size: 16px;
+  color: #04080f;
+  text-align: start;
+}
+
+/* Underlined inputs - same style as admin */
+.sl-input {
+  padding: 8px 44px 8px 6px;
+  border: none;
+  border-bottom: 2px solid #d6d6d6;
+  font-size: 18px;
+  outline: none;
+  background: transparent;
+  color: #0b1220; /* visible text */
+}
+.sl-input::placeholder {
+  color: #bdbdbd;
+}
+.sl-input:focus {
+  border-bottom-color: #6b3b72;
+  box-shadow: 0 8px 18px rgba(107, 59, 114, 0.06);
+}
+
+/* password eye */
+.sl-pass-field {
+  position: relative;
+}
+.sl-eye-btn {
+  position: absolute;
+  right: 8px;
+  top: 75%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #7c7070;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Submit button ---------- */
+.sl-submit {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #f7b1ad;
+  color: #fff;
+  padding: 12px 46px;
+  border-radius: 28px;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(107, 59, 114, 0.1);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sl-submit:hover {
+  transform: translateY(-2px);
+  background: #f29690;
+  box-shadow: 0 10px 30px rgba(107, 59, 114, 0.12);
+}
+.sl-submit[disabled] {
+  opacity: 0.7;
+  transform: none;
+}
+
+/* ---------- Animations (card + loading) ---------- */
+@keyframes sl-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* loading pulse for card */
+.sl-right-loading .sl-card {
+  animation: sl-card-loading 700ms ease-in-out infinite alternate;
+}
+
+@keyframes sl-card-loading {
+  from {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+  to {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+  }
+}
+
+/* global loading lock (optional, except button) */
+.sl-root-loading {
+  pointer-events: none;
+}
+.sl-root-loading .sl-submit {
+  pointer-events: auto;
+}
+
+/* animated gradient while loading */
+.sl-submit-loading {
+  background: linear-gradient(90deg, #f29690, #f7b1ad, #f29690);
+  background-size: 200% 100%;
+  animation: sl-btn-gradient 1.1s linear infinite;
+}
+
+@keyframes sl-btn-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* small circular spinner */
+.sl-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  animation: sl-spin 0.7s linear infinite;
+}
+
+@keyframes sl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sl-submit-text {
+  display: inline-block;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .sl-root {
+    flex-direction: column;
+  }
+
+  .sl-left {
+    width: 100%;
+    flex: none;
+    min-height: 260px;
+    padding: 28px 20px;
+    background-position: center;
+  }
+
+  .sl-right {
+    padding: 28px 18px;
+  }
+
+  .sl-card {
+    padding: 18px;
+    margin-top: 12px;
+    background: transparent;
+  }
+
+  .sl-logo {
+    height: 110px;
+  }
+
+  .sl-title {
+    text-align: center;
+  }
+
+  .sl-tabrow {
+    width: 100%;
+    max-width: 340px;
+    gap: 8px;
+    padding: 4px;
+  }
+
+  .sl-submit {
+    width: 260px;
+    padding: 12px 28px;
+    border-radius: 24px;
+  }
+
+  .sl-eye-btn {
+    right: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sl-logo {
+    height: 90px;
+  }
+
+  .sl-title {
+    font-size: 22px;
+  }
+
+  .sl-input {
+    font-size: 14px;
+    padding-right: 44px;
+  }
+
+  .sl-submit {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .sl-tabrow {
+    width: 100%;
+    padding: 6px;
+  }
+
+  .sl-eye-btn {
+    right: 8px;
+    top: 75%;
+  }
+}

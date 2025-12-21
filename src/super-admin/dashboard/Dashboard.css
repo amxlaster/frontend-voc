@@ -1,0 +1,268 @@
+/* ===============================
+   SUPER ADMIN DASHBOARD CSS
+   All dashboard classes use sa-
+   =============================== */
+
+:root{
+  --bg: #f5f9ff;
+  --muted: rgba(8,34,60,0.6);
+  --card-bg: #ffffff;
+  --accent: #0b2e5a;
+  --accent-2: #092144;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body, html, #root{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+}
+
+/* -------------------------
+   LAYOUT
+------------------------- */
+
+.sa-dash-layout{
+  display:flex;
+  min-height:100vh;
+  width:100%;
+  background: var(--bg);
+}
+
+/* Layout.jsx provides Sidebar + Topbar so they stay unchanged */
+
+/* main right-side area */
+.sa-dash-main-area{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+/* page content */
+.sa-dash-content{
+  padding:36px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+/* -------------------------
+   HERO SECTION
+------------------------- */
+
+.sa-dash-hero{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-bottom:28px;
+}
+
+.sa-dash-hero h1{
+  margin:0;
+  font-size:28px;
+  color:var(--accent);
+}
+
+.sa-muted{
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* action buttons (Create Admin / Student) */
+.sa-dash-quick{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* -------------------------
+   BUTTONS
+------------------------- */
+
+.sa-btn{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.sa-primary{
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color:white;
+}
+
+.sa-outline{
+  background:white;
+  border:1px solid rgba(0,0,0,0.08);
+  color:var(--accent);
+}
+
+/* -------------------------
+   GRID OF CARDS
+------------------------- */
+
+.sa-dash-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:24px;
+  width:100%;
+  margin-bottom:36px;
+}
+
+.sa-card-link{
+  text-decoration:none;
+  color:inherit;
+}
+
+.sa-card{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:20px;
+  min-height:140px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow: 0 8px 26px rgba(9,34,64,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.sa-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(9,34,64,0.12);
+}
+
+.sa-card h3{
+  margin:0 0 8px;
+  font-size:20px;
+  color:var(--accent);
+}
+
+.sa-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.sa-card-kpi{
+  font-size:22px;
+  font-weight:700;
+  color:var(--accent);
+  margin-top:8px;
+}
+
+/* -------------------------
+   PANEL SECTION (Recent activity)
+------------------------- */
+
+.sa-dash-panel{
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(9,34,64,0.06);
+}
+
+.sa-dash-panel h2{
+  margin:0 0 8px;
+  color:var(--accent);
+}
+
+/* -------------------------
+   RESPONSIVENESS
+------------------------- */
+
+@media (max-width:1200px){
+  .sa-dash-content{
+    padding:28px;
+  }
+  .sa-dash-hero h1{
+    font-size:24px;
+  }
+}
+
+@media (max-width:880px){
+  .sa-dash-content{
+    padding:20px;
+  }
+  .sa-dash-grid{
+    gap:16px;
+  }
+  .sa-card{
+    padding:16px;
+  }
+}
+
+@media (max-width:480px){
+  .sa-dash-hero{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .sa-btn{
+    padding:8px 10px;
+    font-size:14px;
+  }
+}
+@media (max-width: 768px){
+  .sa-dash-content{
+    padding:16px;
+  }
+
+  .sa-dash-hero h1{
+    font-size:22px;
+  }
+
+  .sa-muted{
+    font-size:14px;
+  }
+}
+@media (max-width: 640px){
+  .sa-dash-quick{
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .sa-btn{
+    width:100%;
+    text-align:center;
+  }
+}
+@media (max-width: 600px){
+  .sa-dash-grid{
+    grid-template-columns: 1fr;
+    gap:14px;
+  }
+
+  .sa-card h3{
+    font-size:18px;
+  }
+
+  .sa-card-kpi{
+    font-size:20px;
+  }
+}
+@media (max-width: 480px){
+  .sa-dash-panel{
+    padding:14px;
+  }
+
+  .sa-dash-panel h2{
+    font-size:18px;
+  }
+}
+.sa-dash-main-area,
+.sa-dash-content{
+  max-width:100%;
+  overflow-x:hidden;
+}
+.sa-dash-layout{
+  overflow-x:hidden;
+}

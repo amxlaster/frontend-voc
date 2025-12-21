@@ -1,0 +1,399 @@
+/* ============================================================
+   ROOT WRAPPER
+============================================================ */
+.adm-leaderboard-root {
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* ============================================================
+   MAIN CARD
+============================================================ */
+.adm-leadercard {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  padding: 28px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 32px rgba(9,34,64,0.10);
+  transition: 0.25s ease;
+}
+
+.adm-leadercard:hover {
+  box-shadow: 0 18px 40px rgba(9,34,64,0.16);
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.adm-leader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(10,30,60,0.06);
+}
+
+.adm-leader-header h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  color: #0b2e5a;
+  letter-spacing: -0.5px;
+}
+
+/* ============================================================
+   SEARCH + REFRESH CONTROLS
+============================================================ */
+.adm-leader-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.adm-leader-search {
+  padding: 10px 14px;
+  border-radius: 10px;
+  min-width: 260px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #f8fbff;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.adm-leader-search:focus {
+  border-color: #0b2e5a;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11,46,90,0.08);
+}
+
+.adm-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: linear-gradient(180deg,#0b2e5a,#092144);
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.adm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(9,34,64,0.25);
+}
+
+/* ============================================================
+   TOP 3 CARDS
+============================================================ */
+.adm-topcards {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.adm-topcard {
+  flex: 1;
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(180deg,#ffffff,#f3f7fc);
+  box-shadow: 0 6px 18px rgba(9,34,64,0.05);
+  transition: 0.3s ease;
+}
+
+.adm-topcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(9,34,64,0.10);
+}
+
+.adm-medal {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm-topcard.gold .adm-medal { background: #b8860b; }
+.adm-topcard.silver .adm-medal { background: #9aa6b2; }
+.adm-topcard.bronze .adm-medal { background: #b36a2d; }
+
+.adm-top-name {
+  font-weight: 900;
+  color: #0b2e5a;
+  font-size: 18px;
+}
+
+.adm-top-score {
+  font-weight: 700;
+  color: rgba(8,34,60,0.75);
+}
+
+/* ============================================================
+   LIST HEADER (DESKTOP)
+============================================================ */
+.adm-list-wrap {
+  margin-top: 22px;
+}
+
+.adm-list-head {
+  display: grid;
+  grid-template-columns: 1fr 80px 120px 140px;
+  padding: 16px 20px;
+  background: linear-gradient(180deg,#f8fbff,#f1f6fb);
+  font-weight: 800;
+  color: #0b2e5a;
+  border-bottom: 2px solid rgba(10,30,60,0.08);
+}
+
+/* ============================================================
+   ROWS (DESKTOP)
+============================================================ */
+.adm-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 120px 140px;
+  padding: 18px 20px;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(10,30,60,0.05);
+  transition: 0.22s ease;
+}
+
+.adm-row:hover {
+  background: rgba(11,34,76,0.04);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.adm-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.adm-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(11,34,76,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0b2e5a;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.adm-username {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.adm-col-rank,
+.adm-col-score {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b2e5a;
+}
+
+/* ACTION BUTTONS */
+.adm-col-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.adm-link {
+  background: transparent;
+  border: none;
+  color: #0b2e5a;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.adm-delete {
+  color: #b91c1c !important;
+}
+
+/* EMPTY STATE */
+.adm-empty {
+  padding: 20px;
+  text-align: center;
+  color: rgba(8,34,60,0.6);
+}
+
+/* ============================================================
+   PAGER
+============================================================ */
+.adm-pager {
+  margin-top: 18px;
+  padding: 12px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adm-meta {
+  color: rgba(8,34,60,0.7);
+  font-weight: 700;
+}
+
+.adm-pager-ctrls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm-pager-ctrls button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(10,30,60,0.08);
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0b2e5a;
+}
+
+/* ============================================================
+   🔥 MOBILE RESPONSIVE (PERFECT)
+============================================================ */
+@media (max-width: 900px) {
+
+  .adm-leadercard { padding: 16px; }
+
+  .adm-topcards { flex-direction: column; }
+
+  .adm-leader-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .adm-leader-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .adm-leader-search,
+  .adm-btn {
+    width: 100%;
+  }
+
+  /* Hide desktop table header */
+  .adm-list-head { display: none; }
+
+  /* Convert rows into full-width mobile cards */
+  .adm-row {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid rgba(10,30,60,0.05);
+    border-radius: 10px;
+    padding: 18px;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .adm-col-rank::before {
+    content: "Rank: ";
+    font-weight: 800;
+    color: rgba(8,34,60,0.6);
+  }
+
+  .adm-col-score::before {
+    content: "Score: ";
+    font-weight: 800;
+    color: rgba(8,34,60,0.6);
+  }
+
+  .adm-col-actions {
+    width: 100%;
+    border-top: 1px solid rgba(10,30,60,0.07);
+    padding-top: 10px;
+    justify-content: space-between;
+  }
+
+  /* Pager mobile fix */
+  .adm-pager {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+/* ================================================
+   DESKTOP CLEAN ROW FIX (Better Alignment)
+================================================= */
+@media (min-width: 901px) {
+
+  .adm-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(10,30,60,0.05);
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* LEFT SIDE → Avatar + Name + Email stacked */
+  .adm-col-name {
+    flex: 1;
+  }
+
+  .adm-pill {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .adm-name-email-box {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+
+  .adm-email {
+    color: rgba(8,34,60,0.6);
+    font-size: 13px;
+  }
+
+  /* CENTER SIDE → Rank & Score grouped */
+  .adm-rank-score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px;
+  }
+
+  .adm-col-rank,
+  .adm-col-score {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 2px 0;
+  }
+
+  /* RIGHT SIDE → Actions */
+  .adm-col-actions {
+    min-width: 150px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+  }
+}
+.adm-report-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
