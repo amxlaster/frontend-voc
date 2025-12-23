@@ -1,7 +1,6 @@
-// frontend/src/super-admin/SuperAdminLogin.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../lib/api";   // ⭐ IMPORTANT
 import logo from "../assets/Arumexa Logo.png";
 import "./SuperAdminLogin.css";
 
@@ -17,24 +16,23 @@ export default function SuperAdminLogin() {
     setMsg("");
 
     try {
-      const res = await axios.post("/auth/login", { email, password });
+      const res = await API.post("/auth/login", {
+        email,
+        password,
+      });
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      setMsg("Login successful — redirecting...");
-
-      // ⭐ FIXED REDIRECT
       navigate("/super-admin/dashboard");
-
     } catch (err) {
+      console.error(err);
       setMsg(err?.response?.data?.message || "Login failed");
     }
   };
 
   return (
     <div className="sa-login-page">
-      <div className="sa-login-overlay" />
       <div className="sa-login-card">
 
         <img src={logo} alt="logo" className="sa-login-logo" />
@@ -43,26 +41,26 @@ export default function SuperAdminLogin() {
 
         <form className="sa-login-form" onSubmit={handleLogin}>
           <input
-            id="email"
             className="sa-login-input"
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(e)=>setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
 
           <input
-            id="password"
             className="sa-login-input"
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e)=>setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
 
-          <button className="sa-login-btn" type="submit">Sign In</button>
+          <button className="sa-login-btn" type="submit">
+            Sign In
+          </button>
         </form>
 
         {msg && <div className="sa-login-msg">{msg}</div>}
