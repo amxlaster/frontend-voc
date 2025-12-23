@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../lib/api";   // ⭐ IMPORTANT
+import API from "../lib/api";          // ⭐ IMPORTANT
 import logo from "../assets/Arumexa Logo.png";
 import "./SuperAdminLogin.css";
 
