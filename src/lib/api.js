@@ -1,13 +1,12 @@
-// frontend/src/lib/api.js
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // MUST be full backend URL
+  baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
   timeout: 60000,
 });
 
-// Attach token
+// Attach JWT token
 API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
