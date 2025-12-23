@@ -1,29 +1,32 @@
 // frontend/src/lib/api.js
 import axios from "axios";
 
-const BASE = import.meta.env.VITE_API_URL || "/api";
-
 const API = axios.create({
-  baseURL: BASE,
+  baseURL: import.meta.env.VITE_API_URL, // MUST be full backend URL
   withCredentials: true,
   timeout: 60000,
 });
 
-API.interceptors.request.use((cfg) => {
-  try {
+// Attach token
+API.interceptors.request.use(
+  (config) => {
     const token = localStorage.getItem("token");
-    if (token) cfg.headers.Authorization = `Bearer ${token}`;
-  } catch {}
-  return cfg;
-}, (err) => Promise.reject(err));
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
+// Handle auth errors
 API.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    if (err.response?.status === 401) {
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
       localStorage.removeItem("token");
     }
-    return Promise.reject(err);
+    return Promise.reject(error);
   }
 );
 
