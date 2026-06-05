@@ -1,0 +1,125 @@
+:root {
+  --accent: #0b2e5a;
+  --accent-2: #092144;
+  --muted: rgba(8,34,60,0.55);
+  --card-bg: #ffffff;
+  --soft-bg: #f3f7fb;
+  --shadow: 0 20px 40px rgba(9,34,64,0.06);
+}
+
+/* ROOT */
+.sa-edit-user-root {
+  width: 100%;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CARD */
+.sa-edit-user-card,
+.sa-edit-user-body {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 30px 35px;
+  box-shadow: var(--shadow);
+}
+
+/* HEADER */
+.sa-edit-user-head {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.sa-edit-user-head h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0;
+}
+
+.sa-edit-user-muted {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+/* FORM GRID */
+.sa-edit-user-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 30px;
+  width: 100%;
+}
+
+/* LABEL */
+.sa-edit-user-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  color: var(--accent);
+  gap: 6px;
+}
+
+/* INPUTS */
+.sa-edit-user-label input,
+.sa-edit-user-label select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid rgba(10,30,60,0.15);
+  border-radius: 10px;
+  outline: none;
+  background: white;
+}
+
+.sa-edit-user-label input:focus,
+.sa-edit-user-label select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(11,46,96,0.15);
+}
+
+/* BUTTONS */
+.sa-edit-user-actions {
+  grid-column: span 2;
+  display: flex;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.sa-edit-user-btn {
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 0;
+}
+
+.sa-edit-user-primary {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 10px 24px rgba(11,34,76,0.12);
+}
+
+.sa-edit-user-outline {
+  background: white;
+  border: 1px solid rgba(10,30,60,0.15);
+  color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 820px) {
+  .sa-edit-user-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sa-edit-user-actions {
+    grid-column: 1;
+    flex-direction: column;
+    width: 100%;
+  }
+}

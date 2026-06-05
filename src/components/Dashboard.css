@@ -1,0 +1,225 @@
+/* ===============================
+   DASHBOARD – CLEAN & RESPONSIVE
+   Sidebar + Hamburger FIXED
+=============================== */
+
+:root{
+  --bg: #f4f7fb;              /* single light background */
+  --card-bg: #ffffff;        /* pure white cards */
+  --accent: #0b2e5a;          /* primary blue */
+  --accent-2: #0b2e5a;        /* same accent (no variation) */
+  --muted: rgba(11,46,90,0.55);
+
+  --shadow: 0 8px 24px rgba(11,46,90,0.08);
+  --border: rgba(11,46,90,0.08);
+}
+
+
+*{ box-sizing:border-box; }
+
+html, body, #root{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background-color: var(--bg);
+}
+
+/* ===============================
+   LAYOUT
+=============================== */
+
+.dash-layout{
+  display:flex;
+  min-height:100vh;
+  width:100vw;
+  overflow-x:hidden;
+}
+
+/* ===============================
+   SIDEBAR
+=============================== */
+
+.dash-sidebar{
+  width:260px;
+  min-width:260px;
+  max-width:260px;
+  background: linear-gradient(180deg,#f7fbff,#eef5fb);
+  border-right:1px solid rgba(0,0,0,0.04);
+  padding:18px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition: transform .3s ease;
+}
+
+/* ===============================
+   MAIN AREA
+=============================== */
+
+.dash-main-area{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+/* ===============================
+   TOPBAR
+=============================== */
+
+.dash-topbar{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:white;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+/* ===============================
+   CONTENT
+=============================== */
+
+.dash-content{
+  padding:36px;
+  width:100%;
+  background-color: var(--bg);
+}
+
+/* ===============================
+   HERO
+=============================== */
+
+.dash-hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+.dash-hero h1{
+  margin:0;
+  font-size:28px;
+  color:var(--accent);
+}
+
+.muted{
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+
+.btn{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn.primary{
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:white;
+}
+
+.btn.outline{
+  background:white;
+  border:1px solid rgba(0,0,0,0.08);
+  color:var(--accent);
+}
+
+/* ===============================
+   GRID & CARDS
+=============================== */
+
+.dash-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap:24px;
+  margin-bottom:36px;
+}
+
+.card{
+  border-radius: 14px;
+  padding: 20px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform .18s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+}
+
+
+
+
+.card h3{
+  margin:0 0 8px;
+  font-size:20px;
+  color:var(--accent);
+}
+
+.card p{ margin:0; color:var(--muted); }
+
+/* ===============================
+   SIDEBAR ITEMS
+=============================== */
+
+.sidebar-brand{
+  font-weight:800;
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logo-dot{
+  width:34px;
+  height:34px;
+  background:var(--accent);
+  border-radius:8px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.nav-list{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:12px;
+}
+
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.nav-item:hover{
+  background:rgba(11,46,90,0.05);
+}
+

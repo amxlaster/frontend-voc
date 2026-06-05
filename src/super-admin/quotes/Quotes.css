@@ -1,0 +1,60 @@
+.quotes-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.quotes-search {
+  padding: 8px;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.quotes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quote-card {
+  padding: 15px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.quote-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.quote-author {
+  color: gray;
+  margin-top: 5px;
+}
+
+.quote-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.danger {
+  color: red;
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background: #1a73e8;
+  color: white;
+  border-radius: 6px;
+}
+
+.quotes-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+}

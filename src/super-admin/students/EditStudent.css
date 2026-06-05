@@ -1,0 +1,165 @@
+/* ============================
+   EDIT STUDENT – FINAL FIXED
+   GUARANTEED RESPONSIVE
+============================ */
+
+/* Root wrapper (optional safety) */
+.sa-edit-student-root {
+  padding: 24px;
+}
+
+/* Card */
+.sa-edit-student-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(11,46,90,0.08);
+}
+
+/* ============================
+   FORM GRID (DESKTOP)
+============================ */
+
+.sa-edit-student-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* DESKTOP ONLY */
+  gap: 22px;
+}
+
+/* Labels */
+.sa-edit-student-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* Inputs */
+.sa-edit-student-form-grid input,
+.sa-edit-student-form-grid select {
+  padding: 11px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.sa-edit-student-form-grid input:focus,
+.sa-edit-student-form-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* Read-only */
+.sa-edit-student-form-grid input[readonly] {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Password + Actions full width (DESKTOP) */
+.sa-edit-student-form-grid label:last-of-type,
+.sa-edit-student-actions {
+  grid-column: span 2;
+}
+
+/* ============================
+   ACTION BUTTONS
+============================ */
+
+.sa-edit-student-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.sa-edit-student-actions button {
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background .2s, transform .15s;
+}
+
+.sa-edit-student-actions button:active {
+  transform: scale(0.97);
+}
+
+/* Save */
+.sa-edit-student-actions button:first-child {
+  background: #0b2e5a;
+  color: white;
+}
+
+.sa-edit-student-actions button:first-child:hover {
+  background: #092144;
+}
+
+/* Cancel */
+.sa-edit-student-actions button:last-child {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #1f2937;
+}
+
+.sa-edit-student-actions button:last-child:hover {
+  background: #f1f5f9;
+}
+
+/* Disabled */
+.sa-edit-student-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==================================================
+   RESPONSIVE – FORCE SINGLE COLUMN (TABLET + MOBILE)
+   🔥 THIS IS THE KEY FIX
+================================================== */
+
+@media screen and (max-width: 1024px) {
+
+  .sa-edit-student-form-grid {
+    grid-template-columns: 1fr !important; /* FORCE keela keela */
+    gap: 16px;
+  }
+
+  .sa-edit-student-form-grid label,
+  .sa-edit-student-actions {
+    grid-column: span 1 !important;
+  }
+
+  .sa-edit-student-actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .sa-edit-student-actions button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* ============================
+   SMALL MOBILE POLISH
+============================ */
+
+@media screen and (max-width: 600px) {
+
+  .sa-edit-student-root {
+    padding: 16px;
+  }
+
+  .sa-edit-student-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+}

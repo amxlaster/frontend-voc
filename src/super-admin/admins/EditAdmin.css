@@ -1,0 +1,146 @@
+/* Root container */
+.sa-edit-user-root {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card container */
+.sa-edit-user-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(11,46,90,0.08);
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Grid layout for form */
+.sa-edit-user-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* Full width fields */
+.sa-edit-user-form-grid label.full,
+.sa-edit-user-actions {
+  grid-column: span 2;
+}
+
+/* Label and Input styling */
+.sa-edit-user-form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  gap: 6px;
+}
+
+.sa-edit-user-form-grid input,
+.sa-edit-user-form-grid select {
+  padding: 11px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.sa-edit-user-form-grid input:focus,
+.sa-edit-user-form-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* Read-only email */
+.sa-edit-user-form-grid input[readonly] {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.sa-edit-user-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.sa-edit-user-btn {
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background .2s, transform .15s;
+}
+
+.sa-edit-user-btn:active {
+  transform: scale(0.97);
+}
+
+.sa-edit-user-primary {
+  background: #0b2e5a;
+  color: white;
+}
+
+.sa-edit-user-primary:hover {
+  background: #092144;
+}
+
+.sa-edit-user-outline {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #1f2937;
+}
+
+.sa-edit-user-outline:hover {
+  background: #f1f5f9;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .sa-edit-user-card {
+    padding: 22px;
+  }
+
+  .sa-edit-user-form-grid {
+    gap: 18px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .sa-edit-user-root {
+    padding: 16px;
+  }
+
+  .sa-edit-user-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .sa-edit-user-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sa-edit-user-actions {
+    grid-column: span 1;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .sa-edit-user-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}

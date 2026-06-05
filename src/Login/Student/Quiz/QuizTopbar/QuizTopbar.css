@@ -1,0 +1,110 @@
+.quiz-topbar {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 2px solid #eee;
+}
+
+.qt-logo {
+  width: 120px;
+}
+
+.qt-center {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.qt-right {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+/* ============================
+   TABLET (Medium) 768px–1024px
+============================ */
+@media (max-width: 1024px) {
+  .quiz-topbar {
+    height: 65px;
+    padding: 0 20px;
+  }
+
+  .qt-logo {
+    width: 100px;
+  }
+
+  .qt-center {
+    font-size: 22px;
+  }
+
+  .qt-right {
+    font-size: 18px;
+    gap: 14px;
+  }
+}
+
+/* ============================
+   SMALL TABLET (480px–768px)
+============================ */
+@media (max-width: 768px) {
+  .quiz-topbar {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .qt-logo {
+    width: 90px;
+  }
+
+  .qt-center {
+    font-size: 20px;
+  }
+
+  .qt-right {
+    font-size: 16px;
+    gap: 12px;
+  }
+}
+
+/* ============================
+   MOBILE (<480px)
+============================ */
+
+@media (max-width: 480px) {
+
+  .quiz-topbar {
+    height: 58px;
+    padding: 0 12px;
+    display: grid;
+    grid-template-columns: 60px 1fr 60px; /* Logo | Title | Icons */
+    align-items: center;
+  }
+
+  .qt-logo {
+    width: 70px;
+  }
+
+  .qt-center {
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap; /* Prevent breaking into 2 lines */
+  }
+
+  .qt-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+
+    /* REMOVE absolute position */
+    position: static;
+  }
+}
+

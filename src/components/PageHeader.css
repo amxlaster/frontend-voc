@@ -1,0 +1,69 @@
+/* PageHeader.css - small, neutral header used across pages */
+
+.ph-root {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+  padding: 4px 0;
+  width:100%;
+}
+
+.ph-left {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.ph-title {
+  margin:0;
+  font-size:22px;
+  color:var(--accent, #0b2e5a);
+  font-weight:800;
+  line-height:1;
+}
+
+.ph-right {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Buttons */
+.ph-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+  font-size:14px;
+  transition: transform .08s ease, box-shadow .12s ease;
+}
+
+/* dashboard primary */
+.ph-dashboard {
+  background: linear-gradient(180deg, var(--accent, #0b2e5a), var(--accent-2, #092144));
+  color:white;
+  box-shadow: 0 8px 20px rgba(11,34,76,0.10);
+}
+
+/* neutral back */
+.ph-back {
+  background: white;
+  color: var(--accent, #0b2e5a);
+  border: 1px solid rgba(10,30,60,0.08);
+  box-shadow: 0 6px 18px rgba(9,34,64,0.04);
+}
+
+/* small screens: stack and keep buttons accessible */
+@media (max-width:720px) {
+  .ph-root { flex-direction:column; align-items:stretch; gap:10px; }
+  .ph-left { width:100%; justify-content:space-between; }
+  .ph-title { font-size:18px; }
+  .ph-right { width:100%; justify-content:flex-end; }
+  .ph-btn { padding:8px 10px; font-size:13px; }
+}

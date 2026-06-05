@@ -1,0 +1,126 @@
+/* ============================
+   SUPER ADMIN LOGIN PAGE CSS
+   All classes prefixed with sa-
+   ============================ */
+
+/* full-screen background */
+.sa-login-page {
+  position: fixed;
+  inset: 0;
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0b2545;
+}
+
+/* dark overlay */
+.sa-login-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 19, 39, 0.45);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+/* frosted card */
+.sa-login-card {
+  position: relative;
+  width: 420px;
+  max-width: calc(100% - 40px);
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(2,10,25,0.45);
+  padding: 34px 36px;
+  text-align: center;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* logo */
+.sa-login-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: -70px auto 10px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(7,20,40,0.35);
+  background: white;
+  padding: 8px;
+}
+
+/* title */
+.sa-login-title {
+  margin: 6px 0 18px;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  color: #09223f;
+}
+
+/* form grid */
+.sa-login-form {
+  display: grid;
+  gap: 12px;
+}
+
+/* inputs */
+.sa-login-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(6,30,60,0.08);
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow .15s, border-color .15s;
+  background: rgba(255,255,255,0.95);
+}
+
+.sa-login-input:focus {
+  box-shadow: 0 6px 18px rgba(9,34,64,0.12);
+  border-color: rgba(29,78,169,0.22);
+}
+
+/* button */
+.sa-login-btn {
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(180deg, #0b2e5a, #092144);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .12s;
+}
+
+.sa-login-btn:hover { 
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(11,34,76,0.2); 
+}
+
+/* message */
+.sa-login-msg {
+  margin-top: 12px;
+  color: #07315c;
+  font-weight: 600;
+}
+
+/* footer */
+.sa-login-footer {
+  margin-top: 14px;
+  font-size: 12px;
+  color: rgba(5,20,40,0.6);
+}
+
+/* responsive */
+@media (max-width:480px) {
+  .sa-login-card { padding: 22px; border-radius: 12px; width: 92%; }
+  .sa-login-logo { width: 96px; height: 96px; margin-top: -56px; }
+}

@@ -1,0 +1,110 @@
+.student-sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #9cbbf8;
+;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #d9e6ff;
+  transition: 0.3s;
+}
+
+/* Logo */
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo-img {
+  width: 150px !important;
+}
+.logo-text {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Menu always vertical */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sidebar-link:hover {
+  background: #c8ddff;
+}
+
+.sidebar-link.active {
+  background: #d4e5ff;
+  font-weight: 700;
+}
+
+/* Logout */
+.logout-btn {
+  background: #ff9fad;
+  border: none;
+  padding: 12px;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: auto;
+  cursor: pointer;
+}
+.logout-btn:hover{
+  background: #ea9d99;
+  box-shadow: 0 12px 34px rgba(107, 59, 114, 0.22);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.logout-btn:hover::after {
+  opacity: 1;
+  transform: translateX(120%);
+}
+.logout-btn:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 5px 18px rgba(107, 59, 114, 0.18);
+  background: #ea9d99;
+}
+
+
+/* =============================== */
+/*            MOBILE VIEW          */
+/* =============================== */
+
+@media (max-width: 900px) {
+
+  /* Sidebar hidden initially */
+  .student-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 300;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  /* Open sidebar */
+  .sidebar-open .student-sidebar {
+    transform: translateX(0);
+  }
+
+  /* Keep vertical layout */
+  .sidebar-menu {
+    flex-direction: column !important;
+  }
+}

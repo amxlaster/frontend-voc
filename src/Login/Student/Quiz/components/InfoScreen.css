@@ -1,0 +1,174 @@
+/* ============================================================
+   MAIN WRAPPER
+============================================================ */
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ============================================================
+   TITLE ABOVE IMAGE
+============================================================ */
+.info-title {
+  width: 90%;
+  max-width: 700px;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   CARD CONTAINER (holds image + textbox)
+============================================================ */
+.info-card {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+}
+
+.info-card-img {
+  width: 550px;
+  height: 350px;
+}
+/* ============================================================
+   IMAGE (OVAL + DROP SHADOW)
+============================================================ */
+.info-img {
+  width: 550px;
+  height: 350px;
+  border-radius: 319.5px;
+  object-fit: cover;
+
+  box-shadow:
+    4px 11px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================================================
+   DESCRIPTION BOX
+============================================================ */
+.info-desc-box {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: white;
+  padding: 20px 34px;
+  border-radius: 18px;
+
+  font-size: 20px;
+  font-weight: 600;
+  width: 75%;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* ============================================================
+   NEXT BUTTON
+============================================================ */
+.info-next-btn {
+  margin-top: 28px;
+  padding: 14px 32px;
+  background: #FFB4B4;
+  border: none;
+  border-radius: 28px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.info-next-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* ============================================================
+   FADE ANIMATION
+============================================================ */
+.fade-in {
+  animation: fade 0.4s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ============================================================
+   🔥 RESPONSIVE BREAKPOINTS
+============================================================ */
+
+/* TABLET (≤1024px) */
+@media (max-width: 1024px) {
+  .info-img {
+    width: 480px;
+    height: 300px;
+  }
+
+  .info-desc-box {
+    width: 80%;
+    font-size: 18px;
+    padding: 18px 30px;
+  }
+
+  .info-title {
+    font-size: 26px;
+  }
+}
+
+
+/* TABLET PORTRAIT (≤768px) */
+@media (max-width: 768px) {
+  .info-img {
+    width: 400px;
+    height: 260px;
+    border-radius: 260px;
+  }
+
+  .info-desc-box {
+    width: 85%;
+    bottom: 35px;
+    font-size: 17px;
+    padding: 16px 26px;
+  }
+
+  .info-title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+
+/* MOBILE (≤480px) */
+@media (max-width: 480px) {
+  .info-img {
+    width: 300px;
+    height: 200px;
+    border-radius: 200px;
+  }
+
+  .info-desc-box {
+    width: 92%;
+    bottom: 20px;
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+
+  .info-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .info-next-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+}

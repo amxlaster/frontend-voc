@@ -1,0 +1,45 @@
+.student-layout {
+  display: flex;
+  height: 100vh;
+  background: #f8faff;
+}
+
+/* RIGHT CONTENT AREA */
+.student-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ONLY CONTENT AREA HAS PADDING */
+.student-content {
+  padding: 40px;
+}
+
+/* =============================== */
+/*         MOBILE OVERLAY          */
+/* =============================== */
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 200;
+  display: none;
+}
+
+/* Show overlay when sidebar is open */
+.sidebar-open .sidebar-overlay {
+  display: block;
+}
+
+/* Desktop: overlay hidden always */
+@media (min-width: 901px) {
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
