@@ -216,7 +216,7 @@ export default function Questions() {
                     <th style={{ width: "90px" }}>Image</th>
                     <th style={{ width: "250px" }}>Options (A, B, C, D)</th>
                     <th style={{ width: "130px" }}>Correct Answer</th>
-                    <th style={{ width: "100px" }}>Upload Date</th>
+          
                   </tr>
                 </thead>
                 <tbody className="bg-white">
@@ -268,12 +268,7 @@ export default function Questions() {
                           Option {getOptionLetter(q.correctIndex)}: {q.options[q.correctIndex] || "—"}
                         </span>
                       </td>
-                      <td>
-                        <div className="small text-muted">{q.date}</div>
-                        <div className="xsmall text-muted" style={{ fontSize: "10px" }}>
-                          {new Date(q.createdAt).toLocaleDateString()}
-                        </div>
-                      </td>
+                      
                     </tr>
                   ))}
                 </tbody>
